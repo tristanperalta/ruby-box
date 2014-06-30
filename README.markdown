@@ -319,7 +319,7 @@ An array of Ruby:Box users in an enterprise (Supports Filtering, Limit and Offse
 users = client.users
 ```
 
-* Remeber the API filters "name" and "login" by the start of the string.  ie: to get "sean+awesome@gmail.com" an approriate filter term would be "sean"
+* Remember the API filters "name" and "login" by the start of the string.  ie: to get "sean+awesome@gmail.com" an approriate filter term would be "sean"
 
 ```ruby
 users = client.users("sean" , 10 , 1)
