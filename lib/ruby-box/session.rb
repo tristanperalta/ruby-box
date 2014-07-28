@@ -64,14 +64,17 @@ module RubyBox
       #http.set_debug_output($stdout)
 
       if @access_token
+        request.delete('Authorization')
         request.add_field('Authorization', "Bearer #{@access_token.token}")
       else
+        request.delete('Authorization')
         request.add_field('Authorization', build_auth_header)
       end
 
-
-      request.add_field('As-User', "#{@as_user}") if @as_user
-
+      if @as_user
+        request.delete('As-User')
+        request.add_field('As-User', "#{@as_user}")
+      end
       response = http.request(request)
 
       if response.is_a? Net::HTTPNotFound
