@@ -41,8 +41,8 @@ describe RubyBox::Client do
   describe '#create_folder' do
     it 'doesnt call folder.create_folder if the folder exists' do
       client = RubyBox::Client.new(@session)
-      mock_root_folder = mock( Object )
-      test_folder = mock( Object )
+      mock_root_folder = double
+      test_folder = double
       mock_root_folder.should_receive(:folders).and_return([test_folder])
       mock_root_folder.should_not_receive(:create_subfolder)
       client.should_receive(:root_folder).and_return(mock_root_folder)
@@ -52,8 +52,8 @@ describe RubyBox::Client do
 
     it 'calls folder.create_folder if the folder does not exist' do
       client = RubyBox::Client.new(@session)
-      mock_root_folder = mock( Object )
-      test_folder = mock( Object )
+      mock_root_folder = double
+      test_folder = double
       mock_root_folder.should_receive(:folders).and_return([])
       mock_root_folder.should_receive(:create_subfolder).and_return(test_folder)
       client.should_receive(:root_folder).and_return(mock_root_folder)
