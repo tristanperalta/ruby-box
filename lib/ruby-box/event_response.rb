@@ -12,6 +12,6 @@ module RubyBox
     def resource_name
       'events'
     end
-    
+
   end
 end

@@ -76,7 +76,7 @@ module RubyBox
       folder = root_folder
       folder_names = split_path(path)
       folder_names.each do |folder_name|
-        new_folder = folder.folders(folder_name).first        
+        new_folder = folder.folders(folder_name).first
         if !new_folder
           begin
             new_folder = folder.create_subfolder(folder_name)
@@ -158,6 +158,6 @@ module RubyBox
       limit = limit.kind_of?(Fixnum) ? limit : 100
       "stream_position=#{stream_position}&stream_type=#{stream_type}&limit=#{limit}"
     end
-    
+
   end
 end

@@ -78,7 +78,7 @@ module RubyBox
     def file_content_url
       "#{RubyBox::API_URL}/#{resource_name}/#{id}/content"
     end
-    
+
 
     def resource_name
       'files'

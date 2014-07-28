@@ -11,7 +11,7 @@ describe RubyBox::Item do
   end
 
   describe '#factory' do
-    
+
     it 'creates an object from a web_link hash' do
       web_link = RubyBox::Item.factory(@session, {
         'type' => 'web_link'

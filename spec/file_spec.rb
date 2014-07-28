@@ -51,7 +51,7 @@ describe RubyBox::File do
       file.name = 'Funky Monkey.jpg'
       file.description = 'a new description'
       file.name.should == 'Funky Monkey.jpg'
-      file.description.should == 'a new description'    
+      file.description.should == 'a new description'
     end
 
     it 'should not update files raw_item hash for keys not in update_fields' do

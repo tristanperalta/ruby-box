@@ -75,12 +75,12 @@ module RubyBox
       # Support has many and paginated has many relationships.
       return many(key) if @@has_many.include?(key)
       return paginated(key, args[0] || 100, args[1] || 0, args[2]) if @@has_many_paginated.include?(key)
-      
+
       # update @raw_item hash if this appears to be a setter.
       setter = method.to_s.end_with?('=')
       key = key[0...-1] if setter
       @raw_item[key] = args[0] if setter and update_fields.include?(key)
-      
+
       # we may have a mini version of the object loaded, fix this.
       reload_meta if @raw_item[key].nil? and has_mini_format?
 

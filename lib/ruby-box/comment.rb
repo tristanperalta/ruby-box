@@ -1,6 +1,6 @@
 module RubyBox
   class Comment < Item
-    
+
     private
 
     def resource_name

@@ -1,4 +1,4 @@
-module RubyBox 
+module RubyBox
   class RubyBoxError < StandardError
     attr_accessor :body, :status
 

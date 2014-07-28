@@ -37,7 +37,7 @@ describe RubyBox::Client do
       client.split_path('foo/bar/').should == ['foo', 'bar']
     end
   end
-  
+
   describe '#create_folder' do
     it 'doesnt call folder.create_folder if the folder exists' do
       client = RubyBox::Client.new(@session)
@@ -49,7 +49,7 @@ describe RubyBox::Client do
       result = client.create_folder( '/test0')
       result.should == test_folder
     end
-    
+
     it 'calls folder.create_folder if the folder does not exist' do
       client = RubyBox::Client.new(@session)
       mock_root_folder = mock( Object )

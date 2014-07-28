@@ -22,7 +22,7 @@ module RubyBox
       begin
         resp = file.upload_content(data) #write a new file. If there is a conflict, update the conflicted file.
       rescue RubyBox::ItemNameInUse => e
-        
+
         # if overwrite flag is false, simply raise exception.
         raise e unless overwrite
 
